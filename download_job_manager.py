@@ -16,6 +16,7 @@ def manage_download_execution(search_params: list):
 
     logger.debug("\n")
     logger.debug("running manager: ")
+    logger.debug("docker config: " + config.docker_host)
     logger.debug("")
     client = docker.DockerClient(base_url=config.docker_host, tls=False)
 
