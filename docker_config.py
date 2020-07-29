@@ -1,6 +1,6 @@
 output = "/log/scheduler"
 maximum_parallelr_scraper = 5
-docker_host = "tcp://192.168.0.70:2375"
+docker_host = "tcp://localhost:2375"
 seach_params =\
         [
           {

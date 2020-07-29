@@ -1,10 +1,11 @@
 import docker
+import config
 from datetime import datetime
 from log_data_collector import log_data_from_text
 
 
 def get_containers_data():
-    client = docker.DockerClient(base_url="tcp://192.168.0.70:2375", tls=False)
+    client = docker.DockerClient(base_url=config.docker_host, tls=False)
     containers = client.containers.list()
     container_datas = {}
     for container in containers:
