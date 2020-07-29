@@ -1,4 +1,4 @@
-import docker
+import docker_client
 import config
 import time
 import docker_data_collector
@@ -18,7 +18,7 @@ def manage_download_execution(search_params: list):
     logger.debug("running manager: ")
     logger.debug("docker config: " + config.docker_host)
     logger.debug("")
-    client = docker.DockerClient(base_url=config.docker_host, tls=False)
+    client = docker_client.get_client()
 
     containers_data = docker_data_collector.get_containers_data()
 
