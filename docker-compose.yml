@@ -3,6 +3,6 @@ version: '3'
 services:
   scraper_vi:
     build: .
-    command: bash -c "python download_job_manager.py"
+    command: "python download_job_manager.py"
     ports:
       - "2375:2375"
