@@ -11,7 +11,7 @@ containers_started = []
 containers_frozen = []
 
 
-def manage_download_execution(search_params: list):
+def manage_download_execution(search_params):
     global containers_started, containers_frozen
 
     logger.debug("\n")
