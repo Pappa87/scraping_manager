@@ -4,5 +4,4 @@ services:
   scraper_vi:
     build: .
     command: "python download_job_manager.py"
-    ports:
-      - "2375:2375"
+    network_mode: "host"
