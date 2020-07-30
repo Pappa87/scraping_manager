@@ -5,22 +5,22 @@ seach_params =\
         [
           {
             "name": "budapest_v",
-            "search_exp": "elado+haz+v-ker"
+            "search_exp": "elado+lakas+v-ker"
           },
           {
             "name": "budapest_vi",
-            "search_exp":  "elado+haz+vi-ker"
+            "search_exp":  "elado+lakas+vi-ker"
           },
           {
             "name": "budapest_vii",
-            "search_exp": "elado+haz+vii-ker"
+            "search_exp": "elado+lakas+vii-ker"
           },
           {
             "name": "budapest_viii",
-            "search_exp": "elado+haz+viii-ker"
+            "search_exp": "elado+lakas+viii-ker"
           },
           {
             "name": "budapest_ix",
-            "search_exp": "elado+haz+ix-ker"
+            "search_exp": "elado+lakas+ix-ker"
           }
         ]
