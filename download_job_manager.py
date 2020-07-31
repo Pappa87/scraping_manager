@@ -53,7 +53,7 @@ def log_running_containers():
     for container_name, container_data in containers_data.items():
         logger.debug(f" \t{container_name} : {container_data}")
 
-    logger.debug("containers started : " + str(containers_started))
+    logger.debug(f"number containers started : {len(containers_started)}\\{len(config.seach_params)}")
     logger.debug("frozen containers: " + str(containers_frozen))
 
 
