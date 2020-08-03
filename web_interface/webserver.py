@@ -1,7 +1,6 @@
-from flask import Flask, request
+from flask import Flask
 from flask_restful import Resource, Api
-from json import dumps
-from docker_data_collector import get_containers_data
+from downalod_manager.docker_data_collector import get_containers_data
 
 
 class Container_data(Resource):

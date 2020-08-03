@@ -1,12 +1,11 @@
-import docker_client
-import config
+from tools import config
 import time
-import docker_data_collector
-from datetime import datetime
+from downalod_manager import docker_data_collector, docker_client
 from tools.logger import get_logger, setup_logger
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 
+logger = get_logger()
 containers_started = []
 containers_frozen = []
 
@@ -46,17 +45,6 @@ def manage_download_execution(search_params):
     log_running_containers()
 
 
-def log_running_containers():
-    global containers_started, containers_frozen
-    containers_data = docker_data_collector.get_containers_data()
-    logger.debug("running_cotainers:")
-    for container_name, container_data in containers_data.items():
-        logger.debug(f" \t{container_name} : {container_data}")
-
-    logger.debug(f"number containers started : {len(containers_started)}\\{len(config.seach_params)}")
-    logger.debug("frozen containers: " + str(containers_frozen))
-
-
 def containers_deployable(search_params):
     containers_data = docker_data_collector.get_containers_data()
     return len(containers_data) < config.maximum_parallelr_scraper and len(search_params) != 0
@@ -93,18 +81,13 @@ def has_container(client, name):
     return name in container_name_list
 
 
-def some_job():
-    logger.debug("test message")
+def log_running_containers():
+    global containers_started, containers_frozen
+    containers_data = docker_data_collector.get_containers_data()
+    logger.debug("running_cotainers:")
+    for container_name, container_data in containers_data.items():
+        logger.debug(f" \t{container_name} : {container_data}")
 
+    logger.debug(f"number containers started : {len(containers_started)}\\{len(config.seach_params)}")
+    logger.debug("frozen containers: " + str(containers_frozen))
 
-setup_logger()
-logger = get_logger()
-logger.debug("")
-logger.debug("execution started: ")
-search_params = config.seach_params.copy()
-
-manage_download_execution(search_params)
-
-scheduler = BlockingScheduler()
-job = scheduler.add_job(manage_download_execution, 'interval', args=[search_params], minutes=1, name="scraper_manager")
-scheduler.start()

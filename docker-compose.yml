@@ -1,7 +1,0 @@
-version: '3'
-
-services:
-  scraper_vi:
-    build: .
-    command: "python download_job_manager.py"
-    network_mode: "host"

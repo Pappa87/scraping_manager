@@ -1,6 +1,6 @@
 import logging
 import os
-import config
+from tools import config
 
 
 def get_logger():

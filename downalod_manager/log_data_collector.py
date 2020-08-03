@@ -4,15 +4,6 @@ from datetime import datetime
 number_of_lines_to_read = 100
 
 
-def log_data_from_file(logfile_path):
-    with open(logfile_path, encoding='utf-8') as log_file:
-        log_tail = []
-        for line in (log_file.readlines()[-number_of_lines_to_read:]):
-            log_tail.append(line)
-        data = log_data_from_text(log_tail)
-        return data
-
-
 def log_data_from_text(log_tail):
     try:
         duration_from_last_log = int((datetime.now() - get_last_log_time(log_tail)).total_seconds() / 60)

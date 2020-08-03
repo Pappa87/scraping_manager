@@ -1,5 +1,5 @@
 import docker
-import config
+from tools import config
 
 client = None
 

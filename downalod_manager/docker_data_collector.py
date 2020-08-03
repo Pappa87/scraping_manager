@@ -1,7 +1,6 @@
-import docker_client
-import config
+from downalod_manager import docker_client
 from datetime import datetime
-from log_data_collector import log_data_from_text
+from downalod_manager.log_data_collector import log_data_from_text
 
 
 def get_containers_data():

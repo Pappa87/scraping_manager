@@ -1,4 +1,5 @@
 output = "/log/scheduler"
+containers_output = "C:\\tmp\\scrapers_output_08_02"
 maximum_parallelr_scraper = 5
 docker_host = "tcp://192.168.0.70:2375"
 seach_params =\
@@ -92,3 +93,6 @@ seach_params =\
             "search_exp": "elado+lakas+xxiii-ker"
           },
         ]
+
+attribut_names = {"Ár", "Akadálymentesített", "Alapterület", "Belmagasság", "Emelet", "Energiatanúsítvány", "Erkély", "Építés éve", "Épület szintjei",  "Fürdő és WC", "Fűtés", "Ingatlan állapota", "Kertkapcsolatos", "Kilátás", "Komfort", "Lakópark neve", "Lift", "Légkondicionáló", "Panelprogram", "Parkolás", "Parkolóhely ára", "Rezsiköltség", "Szobák száma", "Tetőtér", "Tájolás", "key", "location", "number of images", "time_stamp", "type", "description", "gps"}
+
