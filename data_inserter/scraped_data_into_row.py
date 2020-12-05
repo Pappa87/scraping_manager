@@ -4,19 +4,22 @@ from data_inserter.gps_extractor import get_GPS_from_script, extract_geojson
 
 
 def response_to_tuple(response):
-    response = trim_response(response)
+    response = pre_fix_response(response)
     organized_attribute_list = response_to_orgainized_attribute_list(response)
     data_tuple = attribute_list_to_tuple(organized_attribute_list)
     return data_tuple
 
 
-def trim_response(response: dict):
-    trimmed_response = {}
+def pre_fix_response(response: dict):
+    pre_fixed_respose = {}
     for attribute_name, attribute_value in response.items():
         trimmed_name = attribute_name.strip()
         trimmed_value = attribute_value.strip() if isinstance(attribute_value, str) else attribute_name
-        trimmed_response[trimmed_name] = trimmed_value
-    return trimmed_response
+        pre_fixed_respose[trimmed_name] = trimmed_value
+
+    if " Hitelre van szükséged? Kalkulálj! " in response:
+        pre_fixed_respose["Ár"] = response[" Hitelre van szükséged? Kalkulálj! "]
+    return pre_fixed_respose
 
 
 def response_to_orgainized_attribute_list(response):
@@ -28,6 +31,8 @@ def response_to_orgainized_attribute_list(response):
 
     attribute_dict['time_stamp'] = transform_time_stamp(attribute_dict['time_stamp'])
     attribute_dict['gps'] = get_GPS_from_script(attribute_dict['gps'])
+
+
 
     return attribute_dict
 

@@ -1,5 +1,5 @@
 output = "/log/scheduler"
-containers_output = "C:\\tmp\\scrapers_output_08_02"
+containers_output = "C:\\Users\\Pappa\\Desktop\\DATA"
 maximum_parallelr_scraper = 5
 docker_host = "tcp://192.168.0.70:2375"
 seach_params =\

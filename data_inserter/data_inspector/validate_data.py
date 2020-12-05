@@ -1,4 +1,4 @@
-from data_inserter.scraped_data_into_row import response_to_orgainized_attribute_list, trim_response
+from data_inserter.scraped_data_into_row import response_to_orgainized_attribute_list, pre_fix_response
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from data_inserter.data_inspector import plot_geojson
@@ -8,7 +8,7 @@ import regex
 
 # 28956785
 def validate_response(response):
-    response = trim_response(response)
+    response = pre_fix_response(response)
     attribute_list = response_to_orgainized_attribute_list(response)
     print_attribute_list(attribute_list)
 

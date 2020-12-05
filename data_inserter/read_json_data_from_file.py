@@ -4,7 +4,7 @@ import tools.config as config
 from os.path import isdir
 from os import listdir
 import random
-import regex
+
 
 def read_containers_output(action = None):
     container_output = config.containers_output
