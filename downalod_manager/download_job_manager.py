@@ -54,7 +54,7 @@ def run_scraper(client, search_exp, name):
     command = """bash -c "bash webRTC_blocker.sh && node index.js" """
     environment = {"SEARCH_EXP": search_exp}
     cap_add = ["NET_ADMIN"]
-    volumes = {f"/scrapers_output/{name}/scraper_output": {'bind': '/scraper_output', 'mode': 'rw'}}
+    volumes = {f"/scrapers_output_12_05/{name}/scraper_output": {'bind': '/scraper_output', 'mode': 'rw'}}
     network = "scraperv2_scraper-network"
     if has_container(client, name):
         client.containers.get(name).stop()
