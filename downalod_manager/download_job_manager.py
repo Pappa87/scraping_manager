@@ -2,8 +2,6 @@ from tools import config
 import time
 from downalod_manager import docker_data_collector, docker_client
 from tools.logger import get_logger, setup_logger
-from apscheduler.schedulers.blocking import BlockingScheduler
-
 
 logger = get_logger()
 containers_started = []
